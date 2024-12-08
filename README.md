@@ -45,7 +45,7 @@ A fully interactive, browser-based clone of the Windows operating system with fu
    - Use the close (`×`) button to close app windows.
 
 5. **Shutting Down:**
-   - Click the shutdown button on the taskbar or lock screen to power down the system.
+   - Click the shutdown button on the start menu or the lock screen to shut down the system.
 
 6. **Screensaver:**
    - Wait for a period of inactivity to see the animated "Windows 12" screensaver.
@@ -56,4 +56,4 @@ A fully interactive, browser-based clone of the Windows operating system with fu
 - **Responsive Design:** Works best on desktops and laptops but is designed to adapt to smaller screens.
 - **Supported Browsers:** Ensure you are using a modern browser like Chrome, Firefox, or Edge for the best experience.
 
-Enjoy the nostalgia and fun of a Windows-inspired experience, all in your browser!
+Enjoy!
