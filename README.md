@@ -42,7 +42,7 @@ A fully interactive, browser-based clone of the Windows operating system with fu
 
 4. **Managing Windows:**
    - Drag windows by their title bar to reposition them.
-   - Use the minimize (`-`) or close (`×`) buttons to manage app windows.
+   - Use the close (`×`) button to close app windows.
 
 5. **Shutting Down:**
    - Click the shutdown button on the taskbar or lock screen to power down the system.
