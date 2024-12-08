@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Windows 12</title>
     <style>
-   body {
+body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe-UI', sans-serif;
@@ -771,6 +771,14 @@ position:absolute;
 
 .clo{
     position:absolute;
+    padding-top: 2.5px;
+    font-weight: bold;
+}
+
+.pai{
+    position:absolute;
+    padding-top: 1px;
+    font-weight: bold;
 }
 
 .eeClo{
@@ -778,6 +786,8 @@ position:absolute;
     background:conic-gradient(from 45deg, #00aaff, #ff7f7f, #00aaff);
     background-clip:text;
     color:transparent;
+    padding-top: 2.5px;
+    font-weight: bold;
 }
 
 .window-controls {
@@ -1687,7 +1697,6 @@ justify-content:center;
 
     <button id="shutbut" class="shutdown-button"></button>
 </div>
-            
         
 <!-- Clock Window -->
 <div id="clock-window" class="app-window hidden">
@@ -1711,12 +1720,11 @@ justify-content:center;
                </div> 
     </div>
 </div>
-            
 
 <!-- Calculator Window -->
 <div id="calculator-window" class="app-window hidden">
     <div class="window-header">
-        <span>Calculator</span>
+        <span class="clo" >Calculator</span>
         <div class="window-controls">
             <button class="minimize-btn">-</button>
             <button class="close-btn">×</button>
@@ -1750,12 +1758,11 @@ justify-content:center;
     </div>
 </div>
 </div>
-            
 
 <!-- MS Paint Window -->
 <div id="paint-window" class="app-window hidden">
     <div class="window-header">
-        <span class="clo">MS Paint</span>
+        <span class="pai">MS Paint</span>
         <div class="window-controls">
             <button class="minimize-btn">-</button>
             <button class="close-btn">×</button>
@@ -2865,12 +2872,9 @@ windowElement.addEventListener("mousedown", bringToFront);
 
   function updatePointer(e) {
     if (!painting) return
-
     const { x, y } = getPosition(e)
-
     customPointer.style.left = `${x - customPointer.offsetWidth / 2}px`
     customPointer.style.top = `${y - customPointer.offsetHeight / 2}px`
-
     if (erasing) {
       customPointer.style.border = `2px solid black`
       customPointer.style.backgroundColor = `transparent`
@@ -2962,7 +2966,6 @@ windowElement.addEventListener("mousedown", bringToFront);
   eraserSize.addEventListener("input", updateSliderFill)
   const rangeInput = document.querySelector('input[type="range"]')
   updateSliderFill.call(rangeInput)
-
   rangeInput.addEventListener("input", updateSliderFill)
 
   function updateColor() {
@@ -2978,7 +2981,6 @@ windowElement.addEventListener("mousedown", bringToFront);
 
   // ee Logic !?
   var counter = 0
-
   // Opens up the clock app from the taskbar clock button
   eeAppButton.addEventListener("click", () => {
     if (counter <= 3) {
@@ -2993,8 +2995,6 @@ windowElement.addEventListener("mousedown", bringToFront);
     clickSound.play()
   })
 })
-</script>
-    
-    
+</script> 
 </body>
 </html>
