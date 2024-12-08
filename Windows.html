@@ -1,0 +1,2997 @@
+<!--Made By Shourya Suthar-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Windows 12</title>
+    <style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe-UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    height:100vh;
+    background-color: #2c2c2c;
+    overflow: hidden;
+}
+
+.startPc {
+    width:85px;
+    height:95px; background-image:url('https://www.dropbox.com/scl/fi/4pujg0mggyebbg133f2qn/BackgroundEraser_20240920_230329476.png?rlkey=m2fps0sx48497xfxjqx10csqd&st=9rvjmcvw&raw=1');
+     background-size: 115px 115px;
+     background-color: rgba(70, 70, 70, 0.6);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 7px;
+    left:100px;
+    top:100px;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.lockflex {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.passflex {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    position:absolute;
+    translateY(-10000px);
+    visibility:0;
+    transition: transform 0.4s ease-in-out, filter 0.3s ease-in-out, scale 0.4s ease-in-out;
+    background-color:rgba(0,0,0,0.5);
+    width:100%;
+    height:100%;
+    align-items:center;
+    filter:blur(0px);
+    scale:1;
+}
+
+.inputflex {
+position:absolute;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+    top:250px;
+    width:160px;
+    height:35px;
+}
+
+.timeText{
+position:absolute;
+display:flex;
+align-items:center;
+flex-direction:column;
+    font-weight:bold;
+    color:white;
+    font-size:60px;
+    top:60px;
+    justify-content:top;
+    translateY(0);
+    scale: 1;
+    transition: transform 0.4s ease-in-out, scale 0.4s ease-in-out;
+    filter:blur(0px);
+    text-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.dateText{
+position:relative;
+    font-weight:bold;
+    color:white;
+    font-size:15px;
+    top:1px;
+    text-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+#User_Icon{
+position:absolute;
+width:100px;
+height:100px;
+justify-content:center;
+    background: url('https://www.dropbox.com/scl/fi/sze25uorxinqpxn0wgukm/images.png?rlkey=yrd1dc7lev56jczsxdua26ywo&st=glam24k1&raw=1');
+  background-size: cover;
+  background-position: center;
+    border-radius:50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    top:200px;
+}
+
+.pass{
+    width:100px;
+    height:20px;
+    border-radius:7px;
+    margin-top:200px;
+    background-color:rgba(255, 255, 255, 0.15);
+    filter:blur(0.5px);
+    color:white;
+    outline:none;
+    text-align: right;
+    padding: 100px;
+    border: 0px;
+    outline:none;
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+}
+
+input.pass{
+    outline:none !important;
+    border:none !important;
+    }
+
+input.pass:focus {
+    outline:none !important;
+    border:none !important;
+}
+
+input.pass:active, input.pass:visited, input.pass:hover{
+    outline:none !important;
+    border:none !important;
+    border:1px solid transparent ;
+}
+
+.passhint{
+    position:absolute;
+   margin-top:400px;
+    font-size:10px;
+    color:white;
+    font-weight:bold;
+}
+
+.username{
+    position:absolute;
+    justify-content:center;
+    top:310px;
+    color:white;
+    font-weight:bold;
+}
+
+.unlock{
+    width:40px;
+    height:36px;
+    margin-bottom:-175px;
+    translateY(-30px);
+    border-radius:7px;
+    flex-shrink:0;
+    font-weight:bold;
+    text-align:center;
+    border:none;
+    color:white;
+    filter:blur(0.5px);
+    background-color:rgba(255,255,255, 0.15);
+}
+
+.unlock:hover{
+    background-color: rgba(50, 50, 50, 0.4);
+}
+
+.tex{
+    position:absolute ;
+    bottom:50px;
+    font-weight:bold;
+    font-size:21px;
+    color:white;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    translateY(0);
+    scale:1;
+    transition: transform 0.4s ease-in-out, scale 0.4s ease-in-out;
+}
+
+.monitor-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height:400px;
+    background-color:black;
+    background-size: cover;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+#loading_screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition:opacity:1.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+}
+
+/* Loading Circle Animation */
+.loading {
+    display:block;
+    position:relative;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 0.3rem solid rgba(255, 255, 255, 0);
+    border-top-color: #ffffff;
+    animation: spin 1s infinite linear;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+.loading .edge {
+    display:block;
+    position: absolute;
+    border-radius: 50%;
+    width: 0.3rem;
+    height: 0.3rem;
+    background:#fff;
+}
+
+.loading .edge.edge-left {
+    top:0.15rem;
+    left:0.125rem;
+}
+
+.loading .edge.edge-right {
+    top:0.15rem;
+    right:0.125rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(270deg); }
+    100%{transform:rotate(360deg);}
+}
+
+.load-status-text {
+position:absolute ;
+top:350px;
+    color:white;
+    justify-content:center;
+}
+
+/* Fade screen transitions */
+.screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity 1s ease-in-out;
+    pointer-events:none;
+}
+
+.screen.hid {
+    opacity:0;
+    visibility:visible;
+    transition:opacity 0.5s ease-in-out;
+    pointer-events:none;
+}
+
+.screen.visible {
+    opacity:1;
+    visibility:visible;
+    transition:opacity 1s ease-in-out;
+    pointer-events:auto;
+}
+
+/* Splash Screen Style ( alliteration lol :] ) */
+
+#booting-up_screen {
+    color: #fff;
+    text-align: center;
+}
+
+#booting-up_screen h1 {
+    font-size: 2rem;
+    animation: glowing 2s infinite;
+}
+
+@keyframes glowing {
+    0% { text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff; }
+    100% { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff; }
+}
+
+#footer-text {
+    position: absolute;
+    bottom: 4px;
+    right:10px;
+    font-size: 0.05rem;
+    color: #fff;
+}
+
+/* Lockscreen Style */
+
+#lock_screen h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#BG {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('https://www.dropbox.com/scl/fi/qe0hpf1n1hjqu43wclc4j/apps.59569.13672777200662346.8fa944a0-40ec-47ee-859e-d8aaacad60e0.d88b67d1-5873-4a43-9f61-9013984e9bea.jpg?rlkey=5wmxq98oyybw6z5iq72mtbaq5&st=ymr2cned&raw=1');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(0px);
+  transform: scale(1.02);
+  transition: filter 0.6s ease-in-out, transform 0.65s ease-in-out, scale 0.6s ease-in-out;
+}
+
+#lock_screen input {
+    font-size: 1rem;
+    padding: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #00aaff;
+}
+
+#lock_screen select, #unlock_button {
+    padding: 8px;
+    margin-top: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Desktop Style */
+
+#Desktop {
+    background-image: url('https://www.dropbox.com/scl/fi/qe0hpf1n1hjqu43wclc4j/apps.59569.13672777200662346.8fa944a0-40ec-47ee-859e-d8aaacad60e0.d88b67d1-5873-4a43-9f61-9013984e9bea.jpg?rlkey=5wmxq98oyybw6z5iq72mtbaq5&st=ymr2cned&raw=1');
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-position:center ;
+}
+
+#Desktop h1 {
+    font-size: 2rem;
+    color: #fff;
+}
+
+#controls button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Taskbar Style */
+
+.taskbar {
+    position: absolute;
+    bottom: 11px;
+    width: 98%;
+    height: 40px;
+    background-color: rgba(50, 50, 50, 0.7);
+    backdrop-filter:blur(4px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border-top: 1px solid #444;
+    border-radius:8px;
+    overflow:hidden;
+    z-index:2550;
+    opacity: 0;
+    transform: translateY(-125px);
+    transition: opacity 1s ease, transform 0.35s ease, scaleX 1.5s ease, scaleY 1.5s ease;
+    scaleX:0.4;
+    scaleY:0.4;
+}
+
+.taskbar.show {
+    opacity: 1;
+    transform: translateY(0px);
+    scaleX:1;
+    scaleY:1;
+}
+
+.taskbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(50, 50, 50, 0.5);
+    filter: blur(15px); 
+    z-index: -1; 
+}
+
+/* Windows-like Logo */
+
+.taskbar-logo {
+position:absolute;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width:50px;
+    background-color:transparent;
+    pointer:auto;
+    flex: 1;
+    border:none;
+    left:-0.85px;
+    z-index:10;
+    opacity: 0;
+    transform: translateY(500px);
+    transition: opacity 2s ease, transform 0.5s ease, scaleX 2.5s ease, scaleY 2.5s ease;
+    scaleX:0.1;
+    scaleY:0.1;
+}
+
+.taskbar-logo.show {
+    opacity: 1;
+    transform: translateY(0px);
+    scaleX:1;
+    scaleY:1;
+}
+
+.windows-logo {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    z-index:1;
+}
+
+.logo-part {
+    width: 14px;
+    height: 14px;
+    background-color: #54c4fc;
+    position: absolute;
+    border-radius: 2px;
+}
+
+.part1 {
+    top: 0;
+    left: 0;
+}
+
+.part2 {
+    top: 0;
+    right: 0;
+}
+
+.part3 {
+    bottom: 0;
+    left: 0;
+}
+
+.part4 {
+    bottom: 0;
+    right: 0;
+}
+
+.windows-logo_ini {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.logo-part_ini {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    background-color: #0078D7;
+    border-radius: 2px;
+    animation: popOut 1s ease-out forwards, breathing 3s ease-in-out infinite;
+}
+
+.part11 {
+    top: 0;
+    left: 0;
+}
+
+.part12 {
+    top: 0;
+    right: 0;
+}
+
+.part13 {
+    bottom: 0;
+    left: 0;
+}
+
+.part14 {
+    bottom: 0;
+    right: 0;
+}
+
+/* Pop-out animation */
+
+@keyframes popOut {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+        filter: brightness(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: brightness(1);
+    }
+}
+
+/* Breathing animation */
+
+@keyframes breathing {
+    0%, 100% {
+        transform: scale(1); 
+        box-shadow: 0 0 20px rgba(0, 120, 215, 0.7);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 40px rgba(0, 120, 215, 1); 
+    }
+}
+
+.part11 { animation-delay: 0.1s; }
+.part12 { animation-delay: 0.3s; }
+.part13 { animation-delay: 0.5s; }
+.part14 { animation-delay: 0.7s; }
+
+/* Taskbar Clock */
+
+.taskbar-clock {
+    font-size: 1rem;
+    color: #fff;
+    flex: 1;
+    display: flex;
+    justify-content: right;
+    right:-0.85px;
+    font-weight:bold;
+}
+
+.taskbar-clock span {
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 5px;
+}
+
+.taskbar-clock {
+position:absolute;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width:100px;
+    background-color:transparent;
+    pointer:auto;
+    flex: 1;
+    border:none;
+    right:-0.85px;
+    z-index:10;
+}
+
+/* Start Menu Styling */
+
+.start-menu {
+    position: absolute;
+    width: 180px;
+    height: 206px;
+    background-color: rgba(50, 50, 50, 0.7);
+    backdrop-filter:blur(4px);
+    bottom: 60px;
+    left: 11.5px;
+    opacity: 0;
+    transform: translateY(300px);
+    transition: opacity 0.15s ease, transform 0.25s ease;
+    border-radius: 7px; 
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index:2500;
+}
+
+.start-menu.show {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.app-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px;
+    background-color: rgba(70, 70, 70, 0.6); 
+    padding: 10px;
+    border-radius: 7px;
+    width:90%;
+    height:82%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.app-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(60, 60, 60, 0.15);
+    border-radius: 7px;
+    padding: 10px;
+    box-shadow: 0px 0px 4px 1.5px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease;
+    width:72%;
+    height:72%;
+}
+
+.app-button img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.app-button span {
+    font-size: 8px;
+    color: white;
+    font-weight:bold;
+}
+
+.app-button:hover {
+    background-color: rgba(50, 50, 50, 0.4);
+}
+
+.bottom-right-chip {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgba(70, 70, 70, 0.6);
+    padding: 8px;
+    border-radius: 7px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 11px;
+    width:55%;
+    height:90%;
+}
+
+.chip-icon {
+    width: 15px;
+    height: 15px;
+    overflow:hidden;
+    border-radius:20px;
+    background-color: black;
+    margin-right: 5px;
+}
+
+.chip-text {
+    font-size: 9px;
+    color: white;
+    font-weight:bold;
+}
+
+.shutdown-button {
+    position: absolute;
+    bottom: 15px;
+    right: 12px; background-image:url('https://www.dropbox.com/scl/fi/4pujg0mggyebbg133f2qn/BackgroundEraser_20240920_230329476.png?rlkey=m2fps0sx48497xfxjqx10csqd&st=9rvjmcvw&raw=1');
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    background-size: 30px 30px;
+    background-color: rgba(70, 70, 70, 0.6);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+    height:30.5px;
+    width:30.5px;
+}
+
+.shutdown-button:hover {
+    background-color: rgba(50, 50, 50, 0.4);
+}
+
+/*Pseudo element for the blur effect*/
+.start-menu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(50, 50, 50, 0.5);
+    filter: blur(12px); 
+    z-index: -1; 
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(300px);
+    pointer-events: none; 
+}
+
+/* General app window styles */
+
+.app-window {
+    width: 100px;
+    height: 175px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(50, 50, 50, 0.7);
+    backdrop-filter:blur(3px);
+    border: 0.02px solid gray;
+    box-shadow: 0 25px 25px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    overflow:hidden;
+    border-radius:7px;
+    opacity:0;
+    transition:opacity 0.7s ease-in-out;
+    pointer-events:none;
+    }
+    
+.app-window::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(50, 50, 50, 0.5);
+    filter: blur(12px);
+    z-index: -1;
+}    
+    
+.window-header {
+    background-color: rgba(30, 30, 30, 0.9); 
+    color: white;
+    font-size:10px;
+    height:16px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    cursor: move;
+    user-select: none;
+}
+
+.clo{
+    position:absolute;
+}
+
+.eeClo{
+    position:absolute;
+    background:conic-gradient(from 45deg, #00aaff, #ff7f7f, #00aaff);
+    background-clip:text;
+    color:transparent;
+}
+
+.window-controls {
+    display: flex;
+}
+
+.window-controls button {
+    position:absolute ;
+    right:5px;
+    height:16px;
+    width:16px;
+    font-size:10px;
+    border-radius:7px;
+    background-color: rgba(70, 70, 70, 0.7);
+    border: none;
+    color: white;
+    font-weight:bold;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.window-content {
+    flex: 2;
+    padding: 0px;
+    overflow:hidden;
+}
+
+.hidden {
+    opacity:0;
+    transition:opacity 0.2s ease-in-out;
+    pointer-events:none;
+    position: absolute;
+    top: 2500px;
+    left: 2500px;
+}
+
+.minimized {
+    opacity:0;
+    transition:opacity 0.2s ease-in-out;
+    pointer-events:none;
+}
+
+.open{
+    opacity:1;
+    transition:opacity 0.2s ease-in-out;
+    pointer-events:auto;
+    position: absolute;
+    top: 155px;
+    left: 250px;
+}
+
+.clock-window:hidden {
+    opacity:0;
+    transition:opacity 0.2s ease-in-out;
+    pointer-events:none;
+    position: absolute;
+    top: 2500px;
+    left: 2500px;
+}
+
+.clock-window:minimized {
+    opacity:0;
+    transition:opacity 0.2s ease-in-out;
+    pointer-events:none;
+}
+
+.clock-window:open{
+    opacity:1;
+    transition:opacity 0.2s ease-in-out;
+    pointer-events:auto;
+    position: absolute;
+    top: 155px;
+    left: 250px;
+}
+
+.paint-window:hidden {
+    opacity:0;
+    transition:opacity 0.2s ease-in-out;
+    pointer-events:none;
+    position: absolute;
+    top: 2500px;
+    left: 2500px;
+}
+
+.paint-window:minimized {
+    opacity:0.1;
+    transition:opacity 0.2s ease-in-out;
+    pointer-events:none;
+}
+
+.paint-window:open{
+    opacity:1;
+    transition:opacity 0.2s ease-in-out;
+    pointer-events:auto;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.ee-window:hidden {
+    opacity:0;
+    transition:opacity 0.2s ease-in-out;
+    pointer-events:none;
+    position: absolute;
+    top: 2500px;
+    left: 2500px;
+}
+
+.ee-window:minimized {
+    opacity:0.1;
+    transition:opacity 0.2s ease-in-out;
+    pointer-events:none;
+}
+
+.ee-window:open{
+    opacity:1;
+    transition:opacity 0.2s ease-in-out;
+    pointer-events:auto;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+/* ScreenSaver Style*/
+
+
+.screensaver {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 1);
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+  background-size: 200% 200%;
+  position: relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:99999;
+}
+
+.sshidden {
+  pointer-events: none;
+}
+
+.ssvisible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.textw{
+    position:relative;
+    perspective:100000px;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transform-style: preserve-3d;
+    animation:rotate 3.5s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateX(-3deg) rotateY(0deg);
+    }
+    100%{
+        transform: rotateX(-3deg) rotateY(360deg);
+    }
+}
+
+.textw p {
+    font-size:4.2rem;
+    font-weight: bolder;
+    font-family:segoe ui;
+    position:absolute;
+}
+
+#A {
+    color:rgba(200, 200, 200, 1);
+    transform: translateZ(-1px);
+}
+
+#B {
+    color:grey;
+    transform: translateZ(-2px);
+}
+
+#C {
+    color:grey;
+    transform: translateZ(-3px);
+}
+
+#D {
+    color:grey;
+    transform: translateZ(-4px);
+}
+
+#E {
+    color:grey;
+    transform: translateZ(-5px);
+}
+
+#F {
+    color:grey;
+    transform: translateZ(-6px);
+}
+
+#G {
+    color:grey;
+    transform: translateZ(-7px);
+}
+
+/*Content Loading Screen Style*/
+.c-loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    z-index: 1000;
+    backdrop-filter:blur(8px);
+    transition: opacity 0.6s ease;
+}
+
+.c-loading-screen::before {
+    position:absolute;
+    content:'';
+    top:0;
+    left:0;
+    filter:blur(8px);
+}
+
+.progress-bar {
+    width: 80%;
+    height: 20px;
+    background-color: rgba(200,200,200,0.2);
+    border-radius: 10px;
+    filter:blur(1px);
+    margin-top: 20px;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background-color: #00aaff;
+    border-radius: 10px;
+    transition: width 0.3s;
+}
+
+.loading-text {
+    font-weight:bold;
+    font-size:2rem;
+    filter:blur(0.7px);
+}
+
+.clhidden {
+    opacity:0;
+    pointer-events:none;
+}
+
+/*Clock App Appearance*/
+
+.watch-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px; 
+  height: 100px; 
+  border-radius: 0%;
+  box-shadow: 0 45px 45px rgba(0, 0, 0, 0);
+}
+
+canvas {
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 0%; 
+}
+
+#clock {
+  width: 100%; 
+  height: 100%; 
+}
+
+.clockAppFlex {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-direction:column;
+    position:absolute ;
+    bottom:40px;
+    width:100%;
+}
+
+.AtimeText{
+position:absolute;
+    font-weight:bold;
+    color:white;
+    font-size:22px;
+    visibility:1;
+    filter:blur(0px);
+    text-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    justify-content:bottom;
+}
+
+.AdateText{
+position:relative;
+    font-weight:bold;
+    color:white;
+    font-size:8.5px;
+    text-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+
+/*MS Paint Style*/
+
+.window {
+    margin: 0;
+    padding: 0;
+    height: 600px;
+    width:760px;
+    display: flex;
+    flex-direction: column;
+    position:absolute ;
+    top:22px;
+    left:0px;
+}
+
+.toolbar {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 200px;
+    height: 70px;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1px;
+    border-radius: 7px;
+    background-color: rgba(30, 30, 30, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.t1{
+    font-size:8.5px;
+    font-weight:bold;
+    color:white;
+    position:absolute ;
+    bottom:-55px;
+    left:8px;
+}
+
+.t2{
+    font-size:8.5px;
+    font-weight:bold;
+    color:white;
+    position:absolute ;
+    bottom:-33px;
+    left:85px;
+}
+
+.t3{
+    font-size:8.5px;
+    font-weight:bold;
+    color:white;
+    position:absolute ;
+    bottom:-3px;
+    left:164px;
+}
+
+.divider1 {
+    width: 2px;
+    height: 60px; 
+    background-color: rgba(255, 255, 255, 0.4); 
+    filter:blur(0.7px);
+    position:absolute;
+    left:50px;
+    top:6.5px;
+}
+
+.divider2 {
+    width: 2px;
+    height: 60px; 
+    background-color: rgba(255, 255, 255, 0.4); 
+    position:absolute;
+    right:50px;
+    top:6.5px;
+    filter:blur(0.7px);
+}
+
+.toolbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(50, 50, 50, 0.5);
+    filter: blur(12px);
+    z-index: -1;
+}  
+
+.togglePen{
+    border-radius:7px;
+    position:relative ;
+    bottom:45px;
+    right:-163.5px;
+    width: 25px;
+    height: 25px; background-image:url('https://www.dropbox.com/scl/fi/6ic098wjn7bgsvmeturtk/BackgroundEraser_20240929_235114608.png?rlkey=yhw8dund5ea17zjhax9o88ll6&st=9uumduhh&raw=1');
+   background-size: 25px 25px;
+  background-position: center;
+    border: none;
+    background-color:transparent ;
+}
+
+.clearAll{
+position:relative ;
+top:-21px;
+right:-132.5px;
+    border-radius:7px;
+    width: 25px;
+    height: 25px; background-image:url('https://www.dropbox.com/scl/fi/n0h5yoj23vvllmnzwpgvn/BackgroundEraser_20240930_225015670.png?rlkey=xa23jbya6mg6jm7223b73k7n1&st=y5q3eflx&raw=1');
+    background-size:25px 25px;
+    background-position:center;
+    border: none;
+    background-color:transparent;
+}
+
+canvas {
+    flex: 1;
+    touch-action: none; 
+    width:100%;
+    height:100%;
+}
+
+.canva {
+    background-color: rgba(51, 51, 51, 1);
+    width:100%;
+    height:100%;
+}
+
+.penColor{
+position:relative ;
+top:0px;
+    width: 20px;
+    height: 20px;
+    background-color:grey;
+    border: none;
+    border-radius:7px;
+    padding:0;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
+    left:12px;
+}
+
+.eraserColor{
+position:relative;
+    width: 20px;
+    height: 20px;
+    background-color:grey;
+    border: none;
+    border-radius:7px;
+    padding:0;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
+    bottom:-27px;
+    left:-12.5px;
+    z-index:100;
+    pointer-events:auto;
+}
+
+.penSize {
+position:relative ; 
+top:-25px;
+left:67px;
+    width: 60px;
+    height: 10px;
+    background-color:;
+    border: none;
+    --value: 20%;
+}
+
+.eraserSize {
+position:relative ;
+bottom:0px;
+left:-2.5px;
+    width: 60px;
+    height: 10px;
+    background-color:;
+    border: none;
+    --value: 20%; 
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    background: #444;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
+}
+
+input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 8px;
+    background: #444; 
+    border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, #00aaff var(--value), #444 var(--value), #444 100%);
+}
+
+input[type="range"]::-moz-range-track {
+    background: linear-gradient(to right, #00aaff var(--value), #444 var(--value), #444 100%);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    opacity: 0;
+    pointer-events: none; 
+    transition: opacity 0.3s ease;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb,
+input[type="range"]:focus::-webkit-slider-thumb {
+    opacity: 1;
+    pointer-events: all; 
+}
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+input[type="range"] {
+    --value: 50%; 
+}
+
+#customPointer {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0; 
+    border: 2px solid transparent;
+    background-color: transparent;
+}
+
+.color-section{
+    position:absolute ;
+    left:2px;
+}
+
+.size-section {
+    position:absolute ;
+    left:2px;
+    top:26px;
+}
+
+.button-section {
+    position:absolute ;
+    left:2px;
+    top:48px;
+}
+
+
+/* Calculator Style */
+
+
+:root {
+    --calculator-bg: transparent;
+    --button-bg: rgba(32,32,32,0.9);
+    --button-hover-bg: #181818;
+    --button-color: white;
+    --button-hover-color: #00aaff;
+    --display-bg: transparent;
+    --text-color: white;
+    --equal-bg: #0078d7;
+    --equal-hover-bg: #0062b3;
+    --equal-hover-color: white;
+    --mo-color: #22252a;
+    --mo-hover-color: #0099e6;
+    --ac-bg: #22252a;
+    --ac-hover-color: #0099e6;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    width: 99.5%;    
+    height: 322px; 
+    padding: 0;
+    background-color: transparent;
+    justify-content: top-left;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position:relative ;
+    left:0.85px;
+    top:-0.85px;
+}
+
+#display {
+    width: 100%;
+    height: 24%; 
+    font-size: 26px; 
+    font-weight: bold;
+    text-align: right;
+    padding: 1px;
+    margin-bottom: 1px;
+    border: none;
+    background-color: var(--display-bg);
+    border-radius: 7px;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cbuttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    width: 100%;
+    height:120%;
+    flex-grow: 1;
+}
+
+.butto {
+    width: 100%;
+    height: 100%; 
+    padding: 1px; 
+    font-size: 20px; 
+    background-color: var(--button-bg);
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    color: var(--button-color);
+    transform: scale(1);
+    font-weight: bold;
+}
+
+.butto:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-color);
+    border-radius: 9px;
+    transform: scale(1);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.butto:active {
+    transform: scale(0.9);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.zero {
+    grid-column: 1/span 2;
+    width: 100%;
+    height: 100%; 
+    padding: 1px; 
+    font-size: 20px; 
+    background-color: var(--button-bg);
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    color: var(--button-color);
+    font-weight: bold;
+}
+
+.zero:hover{
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-color);
+    border-radius: 9px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.zero:active {
+    transform: scale(0.9);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.equal {
+    grid-row: 4/span 2;
+    grid-column: 4;
+    background-color: var(--equal-bg);
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    font-size: 20px;
+    width: 100%;
+    height: 100%; 
+    padding: 1px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.equal:hover {
+    background-color: var(--equal-hover-bg);
+    color: var(--equal-hover-color);
+    border-radius: 9px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.equal:active {
+    transform: scale(0.9);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.Del, .Add, .Sub, .Multi, .Div {
+    background-color: var(--mo-color);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    font-size: 20px;
+    width: 100%;
+    height: 100%; 
+    padding: 1px; 
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    color: var(--button-color);
+    font-weight: bold;
+}
+
+.Add:hover, .Sub:hover, .Multi:hover, .Div:hover {
+    color: var(--mo-hover-color);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    border-radius:9px;
+    background-color:(--ac-hover-color);
+}
+
+.Add:active, .Sub:active, .Multi:active, .Div:active {
+    transform: scale(0.9);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.AC {
+    background-color: var(--ac-bg);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    height: 100%; 
+    padding: 1px; 
+    font-size: 20px; 
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    color: var(--button-color);
+    font-weight: bold;
+}
+
+.AC:hover, .Del:hover {
+    color: var(--ac-hover-color);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    border-radius:9px;
+    background-color:(--ac-hover-color);
+}
+
+.AC:active, .Del:active {
+    transform: scale(0.9);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+
+.calculator-container {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.5s ease;
+    z-index:10
+}
+
+
+/* ee Window Style !?*/
+
+
+.eeflex {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.eeDev{
+position:absolute;
+width:100px;
+height:100px;
+justify-content:center;
+    background: url('https://www.dropbox.com/scl/fi/wdnyhk1pskdk0f1ntrhv3/PENUP_20241003_165501.png?rlkey=bst3h8qw01gnvgm2b1njcs66y&st=bmyc9al9&raw=1');
+  background-size: cover;
+  background-position: center;
+    border-radius:50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    top:30px;
+    translateX(0);
+    z-index:22;
+}
+
+.eeDevName{
+    position:absolute;
+    justify-content:center;
+    bottom:15px;
+    color:white;
+    font-size:0.6rem;
+}
+</style>
+</head>
+<body>
+
+<!--Content Loading Screen-->
+<div id="cLoadingScreen" class="c-loading-screen">
+            <div class="loading-text" style="user-select: none;">Loading</div>
+            <div class="progress-bar" style="user-select: none;">
+            <div id="loadingProgress" class="progress" style="user-select: none;"></div>
+            </div>
+    </div>
+
+    <div id="monitor" class="monitor-container" style="user-select: none;">
+    
+    <!-- Loading Screen -->
+<div id="loading_screen" class="screen hid">
+    <p class="load_status_text" id="load_status" style="user-select: none; font-size: 2.2rem; font-weight:bold;">Starting Up</p>
+    <span class="loading" style="user-select: none;">
+        <span class="edge edge-left"></span>
+<span class="edge edge-right"></span>
+    </span>
+</div>
+        <!-- Booting Up Screen -->
+<div id="booting-up_screen" class="screen hid">
+    <div class="windows-logo_ini" style="user-select: none;">
+        <div class="logo-part_ini part11"></div>
+        <div class="logo-part_ini part12"></div>
+        <div class="logo-part_ini part13"></div>
+        <div class="logo-part_ini part14"></div>
+    </div>
+    
+     <span class="loading">
+        <span class="edge edge-left"></span>
+<span class="edge edge-right"></span>
+    </span>
+
+    <footer id="footer-text">
+        <p class="made" style="font-size:0.5rem; user-select: none;">Made by Shourya</p>
+    </footer>
+</div>
+
+<!--User Start Screen-->
+<div id="user-start_screen" class="screen">
+    <div id="spc" style="user-select: none;" class="startPc"></div>
+</div>
+
+        <!-- Lockscreen -->
+        <div id="lock_screen" class="screen hid">
+           <img id="BG" style="user-select: none;" />
+            <div class ="lockflex">
+               <div id="time" class="timeText" style="user-select: none;"><span id="current_time"></span>
+                  <div id="date" class="dateText" style="user-select: none;"><span id="current_date"></span>
+                  </div>
+               </div> 
+               <div id="sweep" class="tex" style="display:none;">Swipe Up To Unlock</div>
+            </div>
+            <div id="enter_pass" class="passflex">
+            <img id="User_Icon" style="user-select: none;" />
+            <div id="User_Name" class="username" style="user-select: none;">Administrator</div>
+            <div class ="inputflex">
+                <input type="password" style="user-select: none;" inputmode="numeric" pattern="[0-9]*" maxlength="4" required id="password" class="pass" placeholder="Enter Pin"/>
+                <button id="unlock_button" class="unlock" style="user-select: none;">▶</button>
+            </div>
+            
+            <div class="passhint" style="user-select: none;">Password Hint: First Four Natural Numbers</div> 
+            <button id="shutbut2" style="user-select: none;" class="shutdown-button"></button>
+            </div>
+            
+        </div>
+
+        <!-- Desktop -->
+        <div id="Desktop" class="screen hid">
+            <div id="controls">
+            </div>
+            
+        <div class="start-menu hidden" id="start-menu">
+    <div class="app-buttons">
+        <div id="clock-app-btn" class="app-button">
+            <img src="https://www.dropbox.com/scl/fi/hk71lpswfd70y1hcstx4m/download-1.png?rlkey=y252g61hb2yh2eatpggivarwi&st=4y3mjocz&raw=1" alt="Clock">
+            <span>Clock</span>
+        </div>
+        <div id="calculator-app-btn" class="app-button">
+            <img src="https://www.dropbox.com/scl/fi/yi11yuoeu1gw5rjioe56e/BackgroundEraser_20240920_230406065.png?rlkey=0jmnc0akv4jtupdgjsb68124c&st=gk64zevp&raw=1" alt="Calculator">
+            <span>Calculator</span>
+    </div>
+    <div id="paint-app-btn" class="app-button">
+            <img src="https://www.dropbox.com/scl/fi/mgop99w9qhmxpsfzu7w53/download.png?rlkey=zxzejagpv0lu56dk7qxgyjzue&st=2nn329r0&raw=1" alt="MS Paint">
+            <span>MS Paint</span>
+    </div>
+       <div id="ee-app-btn" class="app-button">
+            <img src="https://www.dropbox.com/scl/fi/ckos2rjx2mnaiwry6ntvl/more-327.png?rlkey=i36jbs239l1pu8v78fgpm5iks&st=op6w3y8m&raw=1" alt="More">
+            <span>More</span>
+    </div>
+</div>    
+
+    <div class="bottom-right-chip">
+        <img src="https://www.dropbox.com/scl/fi/sze25uorxinqpxn0wgukm/images.png?rlkey=yrd1dc7lev56jczsxdua26ywo&st=glam24k1&raw=1" alt="Chip Icon" class="chip-icon">
+        <span class="chip-text">Administrator</span>
+    </div>
+
+    <button id="shutbut" class="shutdown-button"></button>
+</div>
+        
+<!-- Clock Window -->
+<div id="clock-window" class="app-window hidden">
+    <div class="window-header">
+        <span class="clo">Clock</span>
+        <div class="window-controls">
+            <button class="minimize-btn">-</button>
+            <button class="close-btn">×</button>
+        </div>
+    </div>
+    
+    <div class="clock-window-content">
+                <div class="watch-container">
+                    <canvas id="clock"></canvas>
+                </div> 
+                <div class="clockAppFlex">
+                    <div class="AtimeText"><span id="clock_time"></span>
+                  <div class="AdateText"><span id="clock_date"></span>
+                  </div>
+                </div>
+               </div> 
+    </div>
+</div>
+
+<!-- Calculator Window -->
+<div id="calculator-window" class="app-window hidden">
+    <div class="window-header">
+        <span>Calculator</span>
+        <div class="window-controls">
+            <button class="minimize-btn">-</button>
+            <button class="close-btn">×</button>
+        </div>
+    </div>
+    <div class="window-content">
+    <div class="calculator-container">
+        <div class="calculator">
+            <input type="text" id="display" disabled>
+            <div class="cbuttons">
+                <button onclick="clearDisplay()" class="AC">AC</button>
+                <button onclick="deleteLast()" class="Del">⌫</button>
+                <button onclick="appendOperator('/')" class="Div">÷</button>
+                <button onclick="appendOperator('*')" class="Multi">×</button>
+                <button onclick="appendNumber(7)"class="butto">7</button>
+                <button onclick="appendNumber(8)"class="butto">8</button>
+                <button onclick="appendNumber(9)"class="butto">9</button>
+                <button onclick="appendOperator('-')" class="Sub">-</button>
+                <button onclick="appendNumber(4)"class="butto">4</button>
+                <button onclick="appendNumber(5)"class="butto">5</button>
+                <button onclick="appendNumber(6)"class="butto">6</button>
+                <button onclick="appendOperator('+')" class="Add">+</button>
+                <button onclick="appendNumber(1)"class="butto">1</button>
+                <button onclick="appendNumber(2)"class="butto">2</button>
+                <button onclick="appendNumber(3)"class="butto">3</button>
+                <button onclick="appendNumber(0)" class="zero">0</button>
+                <button onclick="appendDot()"class="butto">.</button>
+                <button onclick="calculate()" class="equal">=</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- MS Paint Window -->
+<div id="paint-window" class="app-window hidden">
+    <div class="window-header">
+        <span class="clo">MS Paint</span>
+        <div class="window-controls">
+            <button class="minimize-btn">-</button>
+            <button class="close-btn">×</button>
+        </div>
+    </div>
+    <div class="paint-window-content">
+    <div class="window" id="mWindow">
+    <div class="toolbar">
+    <div class="color-section">
+        <input type="color" id="colorPicker" class="penColor" value="#000000">
+        <input type="color" id="eraserColorPicker" class="eraserColor" value="#333333">
+        <p class="t1">Colors</p>
+    </div>
+    <div class="divider1"></div> 
+    <div class="size-section">
+        <input type="range" id="brushSize" class="penSize" min="1" max="30" value="8">
+        <input type="range" id="eraserSize" class="eraserSize" min="1" max="50" value="15">
+        <p class="t2">Sizes</p>
+    </div>
+    <div class="divider2"></div> 
+    <div class="button-section">
+        <button id="toggleEraser" class="togglePen"></button>
+        <button id="clearButton" class="clearAll"></button>
+        <p class="t3">Tools</p>
+    </div>
+</div>
+    <canvas id="paintCanvas" class="canva"></canvas>
+      <div id="customPointer"></div>
+      </div>
+    </div>
+    </div>
+
+<!-- ee Window !? -->
+<div id="ee-window" class="app-window hidden">
+<div class="for-glow">
+    <div class="window-header">
+        <span class="eeClo">The Dev Himself !?</span>
+        <div class="window-controls">
+            <button class="minimize-btn">-</button>
+            <button class="close-btn">×</button>
+        </div>
+    </div>
+    
+    <div class="ee-window-content">
+    <div class ="eeflex" id="eeHeart">
+        <img class="eeDev" id="eeDev"></img>
+            <div class="eeDevName">Yes, I am the dev, btw name's SHOURYA and my pronous are "HE/HIS". I hope you have a good day or would you [Vsauce Theme Starts Playing]</div>
+    </div>
+    </div>
+</div>
+</div>
+
+            <!-- Taskbar -->
+            <div id="taskbar" class="taskbar hidden">
+                <button id="win-logo" class="taskbar-logo hidden">
+                    <div class="windows-logo">
+                        <div class="logo-part part1"></div>
+                        <div class="logo-part part2"></div>
+                        <div class="logo-part part3"></div>
+                        <div class="logo-part part4"></div>
+                    </div>
+                </button>
+                <button id="win-clock" class="taskbar-clock">
+                    
+                <div class="taskbar-clock">
+                    <span id="taskbar_time"></span>
+                </div>
+                    
+                </button>
+            </div>
+        </div>
+        <!--Screensaver-->
+        <div id="screensaver" class="screensaver sshidden">
+  <div class="textw">
+      <p id="A">Windows 12</p>
+      <p id="B">Windows 12</p>
+      <p id="C">Windows 12</p>
+      <p id="D">Windows 12</p>
+      <p id="E">Windows 12</p>
+      <p id="F">Windows 12</p>
+      <p id="G">Windows 12</p>
+      </div>
+  </div>
+
+    <audio id="button-click">
+        <source src="https://www.dropbox.com/scl/fi/c7glulr8oamfetmg5pngd/mixkit-modern-technology-select-3124.wav?rlkey=v73dbm9ubwlb66i5mshuy0mrn&st=fpimtyuu&raw=1" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    
+     <audio id="startup">
+        <source src="https://www.dropbox.com/scl/fi/jb1r91ccmt3smour3bb6q/windows-11-startup-sound-effect.mp3?rlkey=mfm1k5dmlgmg9k2mmqgrsvr4s&st=d2cjf6n7&raw=1" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    
+     <audio id="logoff">
+        <source src="https://www.dropbox.com/scl/fi/ci6bwnvlaqdk070gzffam/videoplayback.mp3?rlkey=1htcygiebirqiegaiurwn6zff&st=v6fji72w&raw=1" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <audio id="paintAudio">
+        <source src="https://www.dropbox.com/scl/fi/juh7wl24yz6z4eq4kz5v4/Paint_FX.mp3?rlkey=wws5twvzgqvzl53qphx530132&st=9sq4xrh2&dl=0" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+  // No way I'm writing comments for every element :?
+  const bootingScreen = document.getElementById("booting-up_screen")
+  const lockScreen = document.getElementById("lock_screen")
+  const background = document.getElementById("BG")
+  const iniLock = document.getElementById("time")
+  const passLock = document.getElementById("enter_pass")
+  const desktopScreen = document.getElementById("Desktop")
+  const unlockButton = document.getElementById("unlock_button")
+  const lockButton = document.getElementById("shutbut")
+  const lockButton2 = document.getElementById("shutbut2")
+  const currentTimeElement = document.getElementById("current_time")
+  const passwordInput = document.getElementById("password")
+  const clickSound = document.getElementById("button-click")
+  const startSound = document.getElementById("startup")
+  const logOffSound = document.getElementById("logoff")
+  const taskbarTimeElement = document.getElementById("taskbar_time")
+  const clockTimeElement = document.getElementById("clock_time")
+  const logoParts = document.querySelectorAll(".logo-part_ini")
+  const currentDateElement = document.getElementById("current_date")
+  const clockDateElement = document.getElementById("clock_date")
+  const textUp = document.getElementById("sweep")
+  const winLogo = document.getElementById("win-logo")
+  const winClock = document.getElementById("win-clock")
+  const startMenu = document.getElementById("start-menu")
+  const loadingScreen = document.getElementById("loading_screen")
+  const statusText = document.getElementById("load_status")
+  const clockWindow = document.getElementById("clock-window")
+  const calculatorWindow = document.getElementById("calculator-window")
+  const paintWindow = document.getElementById("paint-window")
+  const clockAppBtn = document.getElementById("clock-app-btn")
+  const calculatorAppBtn = document.getElementById("calculator-app-btn")
+  const paintAppBtn = document.getElementById("paint-app-btn")
+  const eeAppButton = document.getElementById("ee-app-btn")
+  const eeWindow = document.getElementById("ee-window")
+  const monitorOut = document.getElementById("monitor")
+  const screensaver = document.getElementById("screensaver")
+  const userStart = document.getElementById("user-start_screen")
+  const userStartBtn = document.getElementById("spc")
+  const taskbar = document.getElementById("taskbar")
+  const cLoadingScreen = document.getElementById("cLoadingScreen")
+  const loadingProgress = document.getElementById("loadingProgress")
+  let highestZIndex = 1000
+  let isRunning = false
+  let isLoading = false
+
+  // Pin
+  const correctPin = "1234"
+
+  clickSound.volume = 0.1
+  startSound.volume = 0.1
+  logOffSound.volume = 1
+
+  // Content Loading Screen Logic
+  const updateProgressBar = (loaded, total) => {
+    const percentage = (loaded / total) * 100
+    loadingProgress.style.width = percentage + "%"
+  }
+
+  const loadAudioWithProgress = (audioElement, progress) => {
+    return new Promise((resolve) => {
+      audioElement.oncanplaythrough = () => {
+        progress.loaded++
+        updateProgressBar(progress.loaded, progress.total)
+        resolve()
+      }
+    })
+  }
+
+  setTimeout(() => {
+    if (!isLoading) {
+      alert("Oops ! looks like your internet isn't quite working.")
+      alert("You can continue but the appearance won't be optimal !")
+      cLoadingScreen.classList.add("clhidden")
+    }
+  }, 10000);
+
+  const progress = {
+    loaded: 0,
+    total: 3,
+  }
+
+  Promise.all([
+    loadAudioWithProgress(clickSound, progress),
+    loadAudioWithProgress(startSound, progress),
+    loadAudioWithProgress(logOffSound, progress),
+  ]).then(() => {
+    cLoadingScreen.classList.add("clhidden")
+    isLoading = true
+  })
+
+  cLoadingScreen.classList.remove("clhidden")
+
+  // A fade effect (If this is too complicated then you can visit my creations page and there you'll find a project named simple script trsnsition. It is exactly the same but here things are complicated.)
+  function fadeToScreen(fromScreen, toScreen) {
+    fromScreen.classList.remove("visible")
+    fromScreen.classList.add("hid")
+
+    setTimeout(() => {
+      showLoadingScreen()
+      toScreen.classList.remove("hid")
+      setTimeout(() => {
+        toScreen.classList.add("visible")
+        setTimeout(() => {
+          hideLoadingScreen()
+        }, 1000)
+      }, 2000)
+    }, 1500)
+  }
+
+  function showLoadingScreen() {
+    loadingScreen.classList.remove("hid")
+    loadingScreen.classList.add("visible")
+  }
+
+  function hideLoadingScreen() {
+    loadingScreen.classList.add("hid")
+    loadingScreen.classList.remove("visible")
+  }
+
+  userStart.classList.add("visible")
+
+  var isOnLS = false;
+
+  //Starts the PC on the start button ckick.
+  userStartBtn.addEventListener("click", () => {
+    bootingScreen.classList.add("visible")
+    userStart.classList.add("hid")
+    userStart.classList.remove("visible")
+    statusText.textContent = "Starting Up"
+    setTimeout(() => {
+      fadeToScreen(bootingScreen, lockScreen)
+      updateLockScreenTime()
+      isOnLS = true
+      isRunning = true
+    }, 3700)
+  })
+
+  //Logo animation
+  setTimeout(() => {
+    logoParts.forEach((part) => {
+      part.classList.add("animate-logo")
+    })
+  }, 75)
+
+  // Smoothly update time per sec
+  function updateLockScreenTime() {
+    updateTime(currentTimeElement)
+    setInterval(() => {
+      updateTime(currentTimeElement)
+    }, 1000)
+  }
+
+  // The same one as above but for taskbar and I made a seperate function for no reason at all idk please don't judge me.
+  function updateTaskbarTime() {
+    updateTime(taskbarTimeElement)
+    setInterval(() => {
+      updateTime(taskbarTimeElement)
+    }, 1000)
+  }
+
+  // Took me a good amount of time to write the day and month conversion code and later just sticked with the set comparison logic, lol.
+  function updateTime(element) {
+    const now = new Date()
+    const hours = now.getHours().toString().padStart(2, "0")
+    const minutes = now.getMinutes().toString().padStart(2, "0")
+    const seconds = now.getSeconds().toString().padStart(2, "0")
+
+    // Get Numeric date
+    const date = now.getDate().toString().padStart(2, "0")
+
+    // Get month number and convert it into month names
+    const monthNames = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ]
+    const month = monthNames[now.getMonth()]
+
+    // Get day number and convert it into day names
+    const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    const day = dayNames[now.getDay()]
+
+    // Update time and date in the text
+    element.textContent = `${hours}:${minutes}`
+    currentDateElement.textContent = `${date} ${month}, ${day}`
+    clockDateElement.textContent = `${date} ${month}, ${day}`
+    clockTimeElement.textContent = `${hours}:${minutes}:${seconds}`
+  }
+
+  passwordInput.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        Unlock()
+    }
+});
+
+  function Unlock()
+  {
+    const enteredPin = passwordInput.value
+    statusText.textContent = "Welcome"
+    navigator.vibrate(30)
+
+    if (enteredPin === correctPin) {
+      startSound.volume = 0.5
+      setTimeout(() => {
+        startSound.play()
+      }, 2500)
+      // If the windows logo is hidden, show it. Simple :》
+      if (winLogo.classList.contains("hidden")) {
+        winLogo.classList.remove("hidden")
+        setTimeout(() => winLogo.classList.add("show"), 4500)
+      }
+      // If the taskbar clock is hidden, show it. Simple :》
+      else if (winClock.classList.contains("hidden")) {
+        winClock.classList.remove("hidden")
+        setTimeout(() => winClock.classList.add("show"), 4500)
+      }
+      // If the taskbar is hidden, show it. Simple :》
+      taskbar.classList.remove("hidden")
+      setTimeout(() => taskbar.classList.add("show"), 4000)
+
+      handleSwipeUp()
+      isOnLS = false
+      fadeToScreen(lockScreen, desktopScreen)
+      updateTaskbarTime()
+    } else {
+      alert("Incorrect Pin. Try entering: " + correctPin)
+      passwordInput.value = "";
+    }
+  }
+
+  // Unlock functionality
+  unlockButton.addEventListener("click", () => {
+        clickSound.volume = 0.1
+        clickSound.play()
+        Unlock()
+  })
+
+  // Lock functionality
+  lockButton.addEventListener("click", () => {
+    shutDown()
+    fadeToScreen(desktopScreen, userStart)
+  })
+
+  lockButton2.addEventListener("click", () => {
+    shutDown()
+    fadeToScreen(lockScreen, userStart)
+  })
+
+  function shutDown() {
+    isRunning = false
+    isOnLS = false
+    statusText.textContent = "Shutting Down"
+    setTimeout(() => {
+      logOffSound.play()
+    }, 1500)
+    logOffSound.volume = 1
+    navigator.vibrate(30)
+    closeWindow(clockWindow)
+    closeWindow(calculatorWindow)
+    closeWindow(paintWindow)
+    closeWindow(eeWindow)
+    passwordInput.value = ""
+    clickSound.play()
+    clickSound.volume = 0.1
+    ctx1.clearRect(0, 0, canvas.width + 1000, canvas.height + 1000)
+    clearDisplay()
+    handleSwipeDown()
+    startMenu.classList.remove("show")
+    setTimeout(() => startMenu.classList.add("hidden"), 300)
+    display.value === "0"
+  }
+
+  // Swipe handling
+
+  function handleSwipeDown() {
+   if(isOnLS === true)
+   {
+    passLock.style.transform = "translateY(-1000px)"
+    passLock.style.visibility = "visibility:0"
+    iniLock.style.transform = "translateY(0)"
+    iniLock.style.scale = "1"
+    iniLock.style.filter = "blur(0px)"
+    textUp.style.transform = "translateY(0)"
+    textUp.style.scale = "1"
+    textUp.style.filter = "blur(0px)"
+    background.style.filter = "blur(0px)"
+    passLock.style.filter = "blur(5px)"
+    background.style.scale = "1.02"
+    passLock.style.scale = "3"
+    passwordInput.blur();
+   }
+   else
+   {
+     return;
+   }
+  }
+
+  function handleSwipeUp() {
+   if(isOnLS === true)
+   {
+    passLock.style.transform = "translateY(-0px)"
+    passLock.style.visibility = "1"
+    iniLock.style.transform = "translateY(-300px)"
+    iniLock.style.scale = "4"
+    iniLock.style.filter = "blur(5px)"
+    textUp.style.transform = "translateY(300px)"
+    textUp.style.scale = "3"
+    textUp.style.filter = "blur(5px)"
+    background.style.filter = "blur(7px)"
+    passLock.style.filter = "blur(0px)"
+    background.style.scale = "1.15"
+    passLock.style.scale = "1"
+    setTimeout(()=> {passwordInput.focus(); }, 100);
+   }
+   else
+   {
+     return;
+   }
+  }
+
+  function handleSwipeLeft() {
+    //Do Nothing
+    return
+  }
+
+  function handleSwipeRight() {
+    //Do Nothing
+    return
+  }
+  
+  document.addEventListener("keydown", (e) => {
+  // Trigger swipe up on any key press
+  handleSwipeUp();
+});
+
+
+ let startX = 0, startY = 0, isSwiping = false;
+
+// Add both touch and mouse events
+const startSwipe = (x, y) => {
+  startX = x;
+  startY = y;
+  isSwiping = true;
+};
+
+const moveSwipe = (currentX, currentY) => {
+  if (!isSwiping) return;
+
+  const deltaX = currentX - startX;
+  const deltaY = currentY - startY;
+
+  if (Math.abs(deltaX) > Math.abs(deltaY)) {
+    if (deltaX < -50) {
+      handleSwipeLeft();
+      isSwiping = false;
+    } else if (deltaX > 50) {
+      handleSwipeRight();
+      isSwiping = false;
+    }
+  } else {
+    if (deltaY > 50) {
+      handleSwipeDown();
+      isSwiping = false;
+    } else if (deltaY < -50) {
+      handleSwipeUp();
+      isSwiping = false;
+    }
+  }
+};
+
+
+
+const endSwipe = () => {
+  isSwiping = false;
+};
+
+// Touch event listeners
+lockScreen.addEventListener("touchstart", (e) => {
+  startSwipe(e.touches[0].clientX, e.touches[0].clientY);
+});
+
+lockScreen.addEventListener("touchmove", (e) => {
+  moveSwipe(e.touches[0].clientX, e.touches[0].clientY);
+});
+
+lockScreen.addEventListener("touchend", endSwipe);
+
+// Mouse event listeners
+lockScreen.addEventListener("mousedown", (e) => {
+  startSwipe(e.clientX, e.clientY);
+});
+
+lockScreen.addEventListener("mousemove", (e) => {
+  if (e.buttons === 1) { // Check if the left mouse button is held down
+    moveSwipe(e.clientX, e.clientY);
+  }
+});
+
+lockScreen.addEventListener("mouseup", (e) => {
+  endSwipe();
+});
+
+background.addEventListener("mouseup", (e) => {
+  setTimeout(()=> {handleSwipeUp(); }, 500);
+});
+
+
+  winLogo.addEventListener("click", function () {
+    clickSound.volume = 0.1
+    clickSound.play()
+    navigator.vibrate(7)
+
+    // If the start menu is hidden, show it. Simple :》
+    if (startMenu.classList.contains("hidden")) {
+      startMenu.classList.remove("hidden")
+      setTimeout(() => startMenu.classList.add("show"), 100)
+    }
+    // If the start menu is visible, hide it. Simple :》
+    else {
+      startMenu.classList.remove("show")
+      setTimeout(() => startMenu.classList.add("hidden"), 300)
+    }
+  })
+
+  //some random default values
+  passLock.style.transform = "translateY(-1000px)"
+  passLock.style.visibility = "0"
+  passLock.style.filter = "blur(5px)"
+  iniLock.style.transform = "translateY(0)"
+  background.style.filter = "blur(0px)"
+  iniLock.style.filter = "blur(0px)"
+  iniLock.style.visibility = "1"
+  textUp.style.color = "white"
+
+  // Open app window
+  function openWindow(windowElement) {
+    windowElement.classList.remove("hidden")
+    windowElement.classList.remove("minimized")
+    windowElement.classList.add("open")
+    highestZIndex += 1
+    windowElement.style.zIndex = highestZIndex
+    navigator.vibrate(7)
+  }
+
+  // Minimize app window
+  function minimizeWindow(windowElement) {
+    windowElement.classList.add("minimized")
+    windowElement.classList.remove("open")
+    navigator.vibrate(7)
+  }
+
+  // Close app window
+  function closeWindow(windowElement) {
+    windowElement.classList.add("hidden")
+    windowElement.classList.remove("open")
+    navigator.vibrate(7)
+  }
+
+  //Do I have to explain it ? Like, isn't it obvius from the name of the function
+  function makeWindowDraggable(windowElement, customWidth, customHeight) {
+    const header = windowElement.querySelector(".window-header")
+    let isDragging = false
+    const monitorRect = desktopScreen.getBoundingClientRect()
+
+    if (customWidth && customHeight) {
+      windowElement.style.width = `${customWidth}px`
+      windowElement.style.height = `${customHeight}px`
+    }
+
+    function bringToFront() {
+      highestZIndex += 1
+      windowElement.style.zIndex = highestZIndex
+    }
+
+    function getOrientation() {
+      return window.innerWidth > window.innerHeight ? "landscape" : "portrait"
+    }
+
+// Handle touch and mouse start
+function onDragStart(e) {
+  isDragging = true;
+  bringToFront();
+  startMenu.classList.remove("show");
+  setTimeout(() => startMenu.classList.add("hidden"), 300);
+
+  // Prevent default for touch to avoid scroll issues
+  if (e.type === "touchstart") {
+    e.preventDefault();
+  }
+}
+
+// Handle touch and mouse move
+function onDragMove(e) {
+  if (!isDragging) return;
+
+  let clientX, clientY;
+
+  if (e.type === "mousemove") {
+    clientX = e.clientX;
+    clientY = e.clientY;
+  } else if (e.type === "touchmove") {
+    const touch = e.touches[0];
+    clientX = touch.clientX;
+    clientY = touch.clientY;
+  } else {
+    return;
+  }
+
+  const orientation = getOrientation();
+
+  let newLeft = clientX;
+  let newTop = clientY;
+
+  if (newLeft < monitorRect.left) newLeft = monitorRect.left;
+  if (newTop < monitorRect.top) newTop = monitorRect.top;
+  if (newLeft + windowElement.offsetWidth > monitorRect.right + 90) {
+    newLeft = monitorRect.right + 90 - windowElement.offsetWidth;
+  }
+  if (newTop + windowElement.offsetHeight > monitorRect.bottom + 155) {
+    newTop = monitorRect.bottom + 155 - windowElement.offsetHeight;
+  }
+
+  windowElement.style.left = `${newLeft - monitorRect.left}px`;
+  windowElement.style.top = `${newTop - monitorRect.top}px`;
+
+  startMenu.classList.remove("show");
+  setTimeout(() => startMenu.classList.add("hidden"), 300);
+}
+
+// Handle touch and mouse end
+function onDragEnd() {
+  isDragging = false;
+}
+  
+
+// Add listeners for both touch and mouse events
+header.addEventListener("touchstart", onDragStart);
+header.addEventListener("mousedown", onDragStart);
+
+document.addEventListener("touchmove", onDragMove);
+document.addEventListener("mousemove", onDragMove);
+
+document.addEventListener("touchend", onDragEnd);
+document.addEventListener("mouseup", onDragEnd);
+
+windowElement.addEventListener("touchstart", bringToFront);
+windowElement.addEventListener("mousedown", bringToFront);
+
+}
+
+
+  // Initialize draggable windows with custom sizes
+  makeWindowDraggable(clockWindow, 100, 175)
+  makeWindowDraggable(calculatorWindow, 200, 350)
+  makeWindowDraggable(paintWindow, 700, 450)
+  makeWindowDraggable(eeWindow, 200, 200)
+
+  // Clock app button click logic
+  clockAppBtn.addEventListener("click", () => {
+    openWindow(clockWindow)
+    navigator.vibrate(7)
+    startMenu.classList.remove("show")
+    setTimeout(() => startMenu.classList.add("hidden"), 300)
+    clickSound.volume = 0.1
+    clickSound.play()
+  })
+
+  // Clock app button click logic
+  paintAppBtn.addEventListener("click", () => {
+    openWindow(paintWindow)
+    navigator.vibrate(7)
+    startMenu.classList.remove("show")
+    setTimeout(() => startMenu.classList.add("hidden"), 300)
+    clickSound.volume = 0.1
+    clickSound.play()
+  })
+
+  // Opens up the clock app from the taskbar clock button
+  winClock.addEventListener("click", () => {
+    openWindow(clockWindow)
+    clickSound.volume = 0.1
+    navigator.vibrate(7)
+    clickSound.play()
+  })
+
+  // Calculator app button click logic
+  calculatorAppBtn.addEventListener("click", () => {
+    openWindow(calculatorWindow)
+    startMenu.classList.remove("show")
+    setTimeout(() => startMenu.classList.add("hidden"), 300)
+    clickSound.volume = 0.1
+    clickSound.play()
+    navigator.vibrate(7)
+  })
+
+  // Close and minimize buttons logic
+
+  document.querySelectorAll(".close-btn").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      const windowElement = e.target.closest(".app-window")
+      closeWindow(windowElement)
+      clickSound.volume = 0.1
+      clickSound.play()
+      navigator.vibrate(7)
+    })
+  })
+
+  document.querySelectorAll(".minimize-btn").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      const windowElement = e.target.closest(".app-window")
+      minimizeWindow(windowElement)
+      clickSound.volume = 0.1
+      clickSound.play()
+      navigator.vibrate(7)
+    })
+  })
+
+  // Listen for clicks outside the menu
+  document.addEventListener("click", function (event) {
+    const isClickInsideMenu = startMenu.contains(event.target)
+    const isClickToggleButton = winLogo.contains(event.target)
+
+    if (!isClickInsideMenu && !isClickToggleButton) {
+      startMenu.classList.remove("show")
+      setTimeout(() => startMenu.classList.add("hidden"), 300)
+    }
+  })
+
+  //Screensaver Logic
+
+  let screensaverTimeout
+
+  function showScreensaver() {
+    if (isRunning) {
+      screensaver.classList.add("ssvisible")
+      screensaver.classList.remove("sshidden")
+    }
+  }
+
+  function hideScreensaver() {
+    screensaver.classList.remove("ssvisible")
+    screensaver.classList.add("sshidden")
+    resetScreensaverTimer()
+  }
+
+  function resetScreensaverTimer() {
+    clearTimeout(screensaverTimeout)
+    screensaverTimeout = setTimeout(showScreensaver, 20000)
+  }
+
+  screensaver.addEventListener("click", () => {
+    hideScreensaver()
+  })
+
+  // Reset timer on pointer events
+  ;[
+    "mousemove",
+    "mousedown",
+    "touchstart",
+    "keydown",
+    "pointermove",
+    "pointerdown",
+    "touchmove",
+  ].forEach((event) => {
+    document.addEventListener(event, resetScreensaverTimer)
+  })
+
+  //Clock App Code
+
+  const canvas = document.getElementById("clock")
+  const ctx = canvas.getContext("2d")
+  ctx.lineCap = "round"
+
+  // Draws the base of the clock inside the CSS canvas element
+  function drawClock() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+    const radius = Math.min(canvas.width, canvas.height / 2)
+    ctx.translate(radius, radius)
+
+    const now = new Date()
+    const seconds = now.getSeconds() + now.getMilliseconds() / 1000
+    const minutes = now.getMinutes() + seconds / 60
+    const hours = (now.getHours() % 12) + minutes / 60
+
+    drawHands(hours, minutes, seconds)
+    drawHourMarks()
+    ctx.translate(-radius, -radius)
+  }
+
+  // Draws the hour marks of clock without "CSS"
+  function drawHourMarks() {
+    const radius = Math.min(canvas.width, canvas.height) / 2
+    ctx.beginPath()
+    for (let i = 0; i < 12; i++) {
+      const angle = (i * Math.PI) / 6
+      const x1 = (radius - 20) * Math.cos(angle)
+      const y1 = (radius - 20) * Math.sin(angle)
+      const x2 = (radius - 10) * Math.cos(angle)
+      const y2 = (radius - 10) * Math.sin(angle)
+
+      ctx.moveTo(x1, y1)
+      ctx.lineTo(x2, y2)
+    }
+    ctx.strokeStyle = "white"
+    ctx.lineWidth = 4
+    ctx.stroke()
+  }
+
+  // Function that calls the different types 'Organically' drawn hands of the clock
+  function drawHands(hours, minutes, seconds) {
+    const radius = Math.min(canvas.width, canvas.height) / 2
+    const secondAngle = (Math.PI / 30) * seconds
+    const minuteAngle = (Math.PI / 30) * minutes
+    const hourAngle = (Math.PI / 6) * hours
+
+    drawHand(secondAngle, radius - 20, 2, "#0088d5")
+    drawHand(minuteAngle, radius - 30, 5, "white")
+    drawHand(hourAngle, radius - 45, 5, "white")
+  }
+
+  // Draws the hands of clock without "CSS"(Yeah i copied this comment from the above comment is there a problem ?)
+  function drawHand(angle, length, width, color) {
+    ctx.beginPath()
+    ctx.strokeStyle = color
+    ctx.lineWidth = width
+    ctx.moveTo(0, 0)
+    ctx.lineTo(
+      length * Math.cos(angle - Math.PI / 2),
+      length * Math.sin(angle - Math.PI / 2),
+    )
+    ctx.stroke()
+  }
+
+  // Function to update the clock
+  function updateClock() {
+    drawClock()
+    requestAnimationFrame(updateClock)
+  }
+
+  // Initially updates the clock
+  updateClock()
+
+  //Calculator App Code
+
+  const display = document.getElementById("display")
+
+  // Function to clear the display and reset animations
+  function clearDisplay() {
+    clickSound.play()
+    clickSound.volume = 0.1
+    navigator.vibrate(30)
+    fadeOutDisplay()
+    display.value = ""
+    checkIfEmpty()
+    fadeInDisplay()
+  }
+
+  // Function to delete the last character or clear the display
+  function deleteLast() {
+    clickSound.play()
+    clickSound.volume = 0.1
+    navigator.vibrate(20)
+    if (
+      display.value === "undefined" ||
+      display.value === "Error" ||
+      display.value === "NaN" ||
+      display.value === "Infinity"
+    ) {
+      clearDisplay()
+    } else {
+      fadeOutDisplay()
+      display.value = display.value.slice(0, -1)
+      checkIfEmpty()
+      fadeInDisplay()
+    }
+  }
+
+  // Function to check if the display is empty and set "0"
+  function checkIfEmpty() {
+    if (display.value === "") {
+      display.value = "0"
+    }
+  }
+
+  // Initial display setup
+  checkIfEmpty()
+
+  // Function to append a number to the display
+  function appendNumber(number) {
+    clickSound.play()
+    clickSound.volume = 0.1
+    fadeOutDisplay()
+    navigator.vibrate(7)
+    if (display.value === "0") {
+      display.value = number
+    } else {
+      display.value += number
+    }
+
+    fadeInDisplay()
+  }
+
+  // Function to append an operator to the display
+  function appendOperator(operator) {
+    clickSound.play()
+    clickSound.volume = 0.1
+    navigator.vibrate(7)
+    const lastChar = display.value.slice(-1)
+    lastOperation = operator
+    fadeOutDisplay()
+
+    if (["+", "-", "*", "/"].includes(lastChar)) {
+      display.value = display.value.slice(0, -1) + operator
+    } else {
+      display.value += operator
+    }
+
+    fadeInDisplay()
+  }
+
+  // Function to apply fade-in animation
+  function fadeInDisplay() {
+    display.classList.remove("fade-out")
+    display.classList.add("fade-in")
+
+    display.addEventListener(
+      "animationend",
+      () => {
+        display.classList.remove("fade-in")
+      },
+      { once: true },
+    )
+  }
+
+  // Function to apply fade-out animation
+  function fadeOutDisplay() {
+    display.classList.remove("fade-in")
+
+    display.classList.add("fade-out")
+
+    display.addEventListener(
+      "animationend",
+      () => {
+        display.classList.remove("fade-out")
+      },
+      { once: true },
+    )
+  }
+
+  // Variable to store the last result of a calculation
+  let lastOperationResult = null
+
+  function appendDot() {
+    fadeOutDisplay()
+    clickSound.play()
+    clickSound.volume = 0.1
+    navigator.vibrate(7)
+    const currentValue = display.value
+    const lastChar = currentValue.slice(-1) // Get the last character of the display
+
+    // Split the current value based on operators to isolate the last number entered
+    const lastNumber = currentValue.split(/[\+\-\*\/]/).pop()
+
+    // Check if the last number already has a dot
+    if (!lastNumber.includes(".")) {
+      // If the last character is a number or operator, append the dot
+      if (/\d/.test(lastChar) || ["+", "-", "*", "/"].includes(lastChar)) {
+        display.value += "."
+      }
+    }
+    fadeInDisplay()
+  }
+
+  // Calaculates the value on the display.
+  function calculate() {
+    clickSound.play()
+    clickSound.volume = 0.1
+    navigator.vibrate(20)
+    try {
+      lastOperationResult = eval(display.value) || "0"
+      lastOperationResult = roundResult(lastOperationResult)
+      fadeOutDisplay()
+      display.value = lastOperationResult
+      fadeInDisplay()
+      lastOperation = ""
+    } catch {
+      fadeOutDisplay()
+      display.value = "Error"
+      lastOperationResult = null
+      lastOperation = ""
+      fadeInDisplay()
+    }
+  }
+
+  function roundResult(value) {
+    const threshold = 1e-10
+
+    if (Math.abs(value - Math.round(value)) < threshold) {
+      return Math.round(value)
+    }
+
+    return parseFloat(value.toFixed(10))
+  }
+
+  window.clearDisplay = clearDisplay
+  window.deleteLast = deleteLast
+  window.appendNumber = appendNumber
+  window.appendOperator = appendOperator
+  window.appendDot = appendDot
+  window.calculate = calculate
+
+  // MS Paint Code
+
+  const canvas1 = document.getElementById("paintCanvas")
+  const ctx1 = canvas1.getContext("2d")
+  const colorPicker = document.getElementById("colorPicker")
+  const eraserColorPicker = document.getElementById("eraserColorPicker")
+  const brushSize = document.getElementById("brushSize")
+  const eraserSize = document.getElementById("eraserSize")
+  const toggleEraser = document.getElementById("toggleEraser")
+  const clearButton = document.getElementById("clearButton")
+  const customPointer = document.getElementById("customPointer")
+  const paintAudio = document.getElementById("paintAudio")
+
+  canvas1.height = 600
+  canvas1.width = 760
+  paintAudio.volume = 0.25
+
+  let painting = false
+  let erasing = false
+  let currentColor = colorPicker.value
+  let eraserColor = eraserColorPicker.value
+  let currentBrushSize = brushSize.value
+  let currentEraserSize = eraserSize.value
+
+  function getPosition(e) {
+    const rect = canvas1.getBoundingClientRect()
+    let x, y
+
+    if (e.type.startsWith("touch")) {
+      const touch = e.touches[0]
+      x = touch.clientX - rect.left
+      y = touch.clientY - rect.top
+    } else {
+      x = e.clientX - rect.left
+      y = e.clientY - rect.top
+    }
+
+    return { x, y }
+  }
+
+  function startPosition(e) {
+    painting = true
+    draw(e)
+    showPointer()
+    /*       paintAudio.volume = 0.25;
+        paintAudio.play();*/
+    navigator.vibrate(12)
+  }
+
+  function endPosition() {
+    painting = false
+    ctx1.beginPath()
+    hidePointer()
+    paintAudio.loop = false
+  }
+
+  function draw(e) {
+    if (!painting) return
+
+    ctx1.lineCap = "round"
+    const { x, y } = getPosition(e)
+
+    if (erasing) {
+      ctx1.lineWidth = currentEraserSize
+      ctx1.strokeStyle = eraserColor
+    } else {
+      ctx1.lineWidth = currentBrushSize
+      ctx1.strokeStyle = currentColor
+    }
+
+    ctx1.lineTo(x, y)
+    ctx1.stroke()
+    ctx1.beginPath()
+    ctx1.moveTo(x, y)
+
+    /*      paintAudio.volume = 0.25;
+        paintAudio.play();
+        paintAudio.loop = true;*/
+  }
+
+  function updatePointer(e) {
+    if (!painting) return
+
+    const { x, y } = getPosition(e)
+
+    customPointer.style.left = `${x - customPointer.offsetWidth / 2}px`
+    customPointer.style.top = `${y - customPointer.offsetHeight / 2}px`
+
+    if (erasing) {
+      customPointer.style.border = `2px solid black`
+      customPointer.style.backgroundColor = `transparent`
+      customPointer.style.width = `${currentEraserSize}px`
+      customPointer.style.height = `${currentEraserSize}px`
+    } else {
+      customPointer.style.border = `1.5px solid black`
+      customPointer.style.backgroundColor = `white`
+      customPointer.style.width = `${currentBrushSize}px`
+      customPointer.style.height = `${currentBrushSize}px`
+    }
+  }
+
+  function showPointer() {
+    customPointer.style.display = "block"
+  }
+
+  function hidePointer() {
+    customPointer.style.display = "none"
+  }
+
+  clearButton.addEventListener("click", () => {
+    ctx1.clearRect(0, 0, canvas.width + 1000, canvas.height + 1000)
+    clickSound.volume = 0.1
+    clickSound.play()
+    navigator.vibrate(7)
+  })
+
+  toggleEraser.addEventListener("click", () => {
+    erasing = !erasing
+    toggleEraser.style.backgroundImage = erasing
+      ? "url('https://www.dropbox.com/scl/fi/l47httze2bit7dwivxdol/BackgroundEraser_20240930_215638659.png?rlkey=08h9ovy8e873ogjycqjmr7jqt&st=78s60ttd&raw=1')"
+      : "url('https://www.dropbox.com/scl/fi/6ic098wjn7bgsvmeturtk/BackgroundEraser_20240929_235114608.png?rlkey=yhw8dund5ea17zjhax9o88ll6&st=9uumduhh&raw=1')"
+    clickSound.volume = 0.1
+    clickSound.play()
+    navigator.vibrate(7)
+    updatePointer()
+  })
+
+  canvas1.addEventListener("mousedown", startPosition)
+  canvas1.addEventListener("mousedown", updatePointer)
+  canvas1.addEventListener("mouseup", endPosition)
+  canvas1.addEventListener("mousemove", draw)
+  canvas1.addEventListener("mousemove", updatePointer)
+  canvas1.addEventListener("touchstart", startPosition)
+  canvas1.addEventListener("touchstart", updatePointer)
+  canvas1.addEventListener("touchend", endPosition)
+  canvas1.addEventListener("touchmove", draw)
+  canvas1.addEventListener("touchmove", updatePointer)
+
+  colorPicker.addEventListener("change", (e) => {
+    currentColor = e.target.value
+    clickSound.volume = 0.1
+    clickSound.play()
+    navigator.vibrate(7)
+  })
+
+  eraserColorPicker.addEventListener("change", (e) => {
+    eraserColor = e.target.value
+    clickSound.volume = 0.1
+    clickSound.play()
+    navigator.vibrate(7)
+  })
+
+  brushSize.addEventListener("input", (e) => {
+    currentBrushSize = e.target.value
+    clickSound.volume = 0.1
+    clickSound.play()
+    navigator.vibrate(7)
+    updatePointer()
+  })
+
+  eraserSize.addEventListener("input", (e) => {
+    currentEraserSize = e.target.value
+    clickSound.volume = 0.1
+    clickSound.play()
+    navigator.vibrate(7)
+    updatePointer()
+  })
+
+  function updateSliderFill() {
+    const value = this.value
+    const max = this.max
+    const percentage = (value / max) * 100
+    this.style.setProperty("--value", percentage + "%")
+  }
+
+  brushSize.addEventListener("input", updateSliderFill)
+  eraserSize.addEventListener("input", updateSliderFill)
+  const rangeInput = document.querySelector('input[type="range"]')
+  updateSliderFill.call(rangeInput)
+
+  rangeInput.addEventListener("input", updateSliderFill)
+
+  function updateColor() {
+    const currentColor = colorPicker.value
+    colorPicker.style.backgroundColor = currentColor
+    const eraserCurrentColor = eraserColorPicker.value
+    eraserColorPicker.style.backgroundColor = eraserCurrentColor
+  }
+
+  updateColor()
+  colorPicker.addEventListener("input", updateColor)
+  eraserColorPicker.addEventListener("input", updateColor)
+
+  // ee Logic !?
+  var counter = 0
+
+  // Opens up the clock app from the taskbar clock button
+  eeAppButton.addEventListener("click", () => {
+    if (counter <= 3) {
+      counter++
+    } else {
+      openWindow(eeWindow)
+      counter = 0
+      navigator.vibrate(7)
+    }
+    clickSound.volume = 0.1
+    navigator.vibrate(7)
+    clickSound.play()
+  })
+})
+</script>
+    
+    
+</body>
+</html>
