@@ -27,27 +27,33 @@ A fully interactive, browser-based clone of the Windows operating system with fu
 
 ## Usage Instructions
 
-1. **Starting the System:**
-   - Click the "Start PC" button on the initial screen to boot up the system.
+1. **Download the html file:**
+   - Click the Windows.html button on this github page to download the file.
 
-2. **Unlocking the System:**
+2. **Run the html file:**
+   - Run the Windows.html file on your system. (Works best on large landscape displays adn chromium-based browsers)
+
+3. **Start the System:**
+   - After running the file, click the "Start PC" button on the initial screen to boot up the system.
+
+4. **Unlock the System:**
    - Enter the password `1234` on the lock screen and press the unlock button or hit "Enter".
 
-3. **Accessing the Apps:**
+5. **Access the Apps:**
    - Open the Start Menu by clicking the Windows logo in the taskbar.
    - Click on the app icons to launch:
      - **Clock:** Displays time and date.
      - **Calculator:** Perform arithmetic operations.
      - **MS Paint:** Draw with a virtual canvas.
 
-4. **Managing Windows:**
+6. **Manage Windows:**
    - Drag windows by their title bar to reposition them.
    - Use the close (`×`) button to close app windows.
 
-5. **Shutting Down:**
+7. **Shutting it Down:**
    - Click the shutdown button on the start menu or the lock screen to shut down the system.
 
-6. **Screensaver:**
+8. **Screensaver:**
    - Wait for a period of inactivity to see the animated "Windows 12" screensaver.
 
 ## Additional Notes
