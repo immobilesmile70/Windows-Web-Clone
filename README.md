@@ -31,7 +31,7 @@ A fully interactive, browser-based clone of the Windows operating system with fu
    - Click the Windows.html button on this github page to download the file.
 
 2. **Run the html file:**
-   - Run the Windows.html file on your system. (Works best on large landscape displays adn chromium-based browsers)
+   - Run the Windows.html file on your system.
 
 3. **Start the System:**
    - After running the file, click the "Start PC" button on the initial screen to boot up the system.
@@ -59,7 +59,6 @@ A fully interactive, browser-based clone of the Windows operating system with fu
 ## Additional Notes
 
 - **Password Hint:** If you forget the password, the hint is "First Four Natural Numbers."
-- **Responsive Design:** Works best on desktops and laptops but is designed to adapt to smaller screens.
-- **Supported Browsers:** Ensure you are using a modern browser like Chrome, Firefox, or Edge for the best experience.
+- **Responsive Design:** Works best on large landscape displays with mouse & keyboard and chromium-based browsers.
 
 Enjoy!
