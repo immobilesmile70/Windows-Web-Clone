@@ -84,7 +84,7 @@ flex-direction:column;
     scale: 1;
     transition: transform 0.4s ease-in-out, scale 0.4s ease-in-out;
     filter:blur(0px);
-    text-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 8px 15px rgba(0, 0, 0, 0.8);
 }
 
 .dateText{
@@ -93,7 +93,7 @@ position:relative;
     color:white;
     font-size:15px;
     top:1px;
-    text-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    text-shadow: 0 8px 15px rgba(0, 0, 0, 0.8);
 }
 
 #User_Icon{
@@ -729,8 +729,8 @@ position:absolute;
     width: 100px;
     height: 175px;
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 100px;
+    left: 150px;
     background-color: rgba(50, 50, 50, 0.7);
     backdrop-filter:blur(3px);
     border: 0.02px solid gray;
@@ -741,7 +741,7 @@ position:absolute;
     overflow:hidden;
     border-radius:7px;
     opacity:0;
-    transition:opacity 0.7s ease-in-out;
+    transition:opacity 0.7s ease-in-out, transform 0.7s ease;
     pointer-events:none;
     }
     
@@ -815,28 +815,24 @@ position:absolute;
     overflow:hidden;
 }
 
-.hidden {
+.app-window.hidden {
     opacity:0;
-    transition:opacity 0.2s ease-in-out;
-    pointer-events:none;
-    position: absolute;
-    top: 2500px;
-    left: 2500px;
-}
-
-.minimized {
-    opacity:0;
-    transition:opacity 0.2s ease-in-out;
+    transform: translateY(300px) scale(0);
+    transition:opacity 0.4s ease-in-out, transform 0.4s ease;
     pointer-events:none;
 }
 
-.open{
+.app-window.minimized {
+    opacity:0;
+    transition:opacity 0.2s ease-in-out;
+    pointer-events:none;
+}
+
+.app-window.open{
     opacity:1;
-    transition:opacity 0.2s ease-in-out;
+    transition:opacity 0.4s ease-in-out, transform 0.4s ease;
     pointer-events:auto;
-    position: absolute;
-    top: 155px;
-    left: 250px;
+    transform: translateY(0px) scale(1);
 }
 
 .clock-window:hidden {
@@ -2872,9 +2868,12 @@ windowElement.addEventListener("mousedown", bringToFront);
 
   function updatePointer(e) {
     if (!painting) return
+
     const { x, y } = getPosition(e)
+
     customPointer.style.left = `${x - customPointer.offsetWidth / 2}px`
     customPointer.style.top = `${y - customPointer.offsetHeight / 2}px`
+
     if (erasing) {
       customPointer.style.border = `2px solid black`
       customPointer.style.backgroundColor = `transparent`
@@ -2966,6 +2965,7 @@ windowElement.addEventListener("mousedown", bringToFront);
   eraserSize.addEventListener("input", updateSliderFill)
   const rangeInput = document.querySelector('input[type="range"]')
   updateSliderFill.call(rangeInput)
+
   rangeInput.addEventListener("input", updateSliderFill)
 
   function updateColor() {
@@ -2981,6 +2981,7 @@ windowElement.addEventListener("mousedown", bringToFront);
 
   // ee Logic !?
   var counter = 0
+
   // Opens up the clock app from the taskbar clock button
   eeAppButton.addEventListener("click", () => {
     if (counter <= 3) {
@@ -2995,6 +2996,8 @@ windowElement.addEventListener("mousedown", bringToFront);
     clickSound.play()
   })
 })
-</script> 
+</script>
+    
+    
 </body>
 </html>
