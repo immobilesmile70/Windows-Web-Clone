@@ -2119,6 +2119,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   lockButton2.addEventListener("click", () => {
     shutDown()
+    handleSwipeDown()
     fadeToScreen(lockScreen, userStart)
   })
 
@@ -2948,30 +2949,28 @@ windowElement.addEventListener("mousedown", bringToFront);
   })
 
   function updateSliderFill() {
-      
     const value = this.value
     const max = this.max
     const percentage = (value / max) * 100
     this.style.setProperty("--value", percentage + "%")
-      
   }
 
   brushSize.addEventListener("input", updateSliderFill)
   eraserSize.addEventListener("input", updateSliderFill)
   const rangeInput = document.querySelector('input[type="range"]')
   updateSliderFill.call(rangeInput)
+
   rangeInput.addEventListener("input", updateSliderFill)
 
   function updateColor() {
-      
     const currentColor = colorPicker.value
     colorPicker.style.backgroundColor = currentColor
     const eraserCurrentColor = eraserColorPicker.value
     eraserColorPicker.style.backgroundColor = eraserCurrentColor
-      
   }
 
   updateColor()
+    
   colorPicker.addEventListener("input", updateColor)
   eraserColorPicker.addEventListener("input", updateColor)
 
@@ -2993,8 +2992,9 @@ windowElement.addEventListener("mousedown", bringToFront);
     navigator.vibrate(7)
     clickSound.play()
   })
-    
 })
-</script>  
+</script>
+    
+    
 </body>
 </html>
