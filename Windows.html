@@ -385,8 +385,8 @@ top:350px;
     bottom: 11px;
     width: 98%;
     height: 40px;
-    background-color: rgba(50, 50, 50, 0.7);
-    backdrop-filter:blur(4px);
+    background-color: rgba(50, 50, 50, 0.6);
+    backdrop-filter:blur(8px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -418,7 +418,7 @@ top:350px;
     right: 0;
     bottom: 0;
     background-color: rgba(50, 50, 50, 0.5);
-    filter: blur(15px); 
+    filter: blur(18px); 
     z-index: -1; 
 }
 
@@ -731,8 +731,8 @@ position:absolute;
     position: absolute;
     top: 100px;
     left: 150px;
-    background-color: rgba(50, 50, 50, 0.7);
-    backdrop-filter:blur(3px);
+    background-color: rgba(50, 50, 50, 0.6);
+    backdrop-filter:blur(8px);
     border: 0.02px solid gray;
     box-shadow: 0 25px 25px rgba(0, 0, 0, 0.5);
     z-index: 100;
@@ -753,7 +753,7 @@ position:absolute;
     right: 0;
     bottom: 0;
     background-color: rgba(50, 50, 50, 0.5);
-    filter: blur(12px);
+    filter: blur(16px);
     z-index: -1;
 }    
     
@@ -2149,8 +2149,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Swipe handling
 
   function handleSwipeDown() {
-   if(isOnLS === true)
-   {
     passLock.style.transform = "translateY(-1000px)"
     passLock.style.visibility = "visibility:0"
     iniLock.style.transform = "translateY(0)"
@@ -2164,11 +2162,6 @@ document.addEventListener("DOMContentLoaded", () => {
     background.style.scale = "1.02"
     passLock.style.scale = "3"
     passwordInput.blur();
-   }
-   else
-   {
-     return;
-   }
   }
 
   function handleSwipeUp() {
@@ -2861,7 +2854,8 @@ windowElement.addEventListener("mousedown", bringToFront);
     ctx1.beginPath()
     ctx1.moveTo(x, y)
 
-    /* paintAudio.play();
+    /*      paintAudio.volume = 0.25;
+        paintAudio.play();
         paintAudio.loop = true;*/
   }
 
@@ -2954,24 +2948,27 @@ windowElement.addEventListener("mousedown", bringToFront);
   })
 
   function updateSliderFill() {
+      
     const value = this.value
     const max = this.max
     const percentage = (value / max) * 100
     this.style.setProperty("--value", percentage + "%")
+      
   }
 
   brushSize.addEventListener("input", updateSliderFill)
   eraserSize.addEventListener("input", updateSliderFill)
   const rangeInput = document.querySelector('input[type="range"]')
   updateSliderFill.call(rangeInput)
-
   rangeInput.addEventListener("input", updateSliderFill)
 
   function updateColor() {
+      
     const currentColor = colorPicker.value
     colorPicker.style.backgroundColor = currentColor
     const eraserCurrentColor = eraserColorPicker.value
     eraserColorPicker.style.backgroundColor = eraserCurrentColor
+      
   }
 
   updateColor()
@@ -2985,16 +2982,19 @@ windowElement.addEventListener("mousedown", bringToFront);
   eeAppButton.addEventListener("click", () => {
     if (counter <= 3) {
       counter++
-    } else {
+    }
+    else {
       openWindow(eeWindow)
       counter = 0
       navigator.vibrate(7)
     }
+      
     clickSound.volume = 0.1
     navigator.vibrate(7)
     clickSound.play()
   })
+    
 })
-</script> 
+</script>  
 </body>
 </html>
