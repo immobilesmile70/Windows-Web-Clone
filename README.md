@@ -1,4 +1,4 @@
-# Windows 12 Browser Clone
+# Windows Browser Clone
 
 A fully interactive, browser-based clone of the Windows operating system with functional apps, animations, and sounds.
 
@@ -17,13 +17,13 @@ A fully interactive, browser-based clone of the Windows operating system with fu
   - A responsive taskbar that includes a Windows logo and a clock.
 
 - **Screensaver:**
-  - A rotating "Windows 12" screensaver appears when idle.
+  - A rotating "Windows" screensaver appears when idle.
 
 - **Sound Effects:**
-  - Startup, shutdown, button clicks, and app interactions come with sounds for an immersive experience.
+  - Startup, shutdown, button clicks, and app interactions have sounds for an immersive experience.
 
 - **Window Management:**
-  - Drag, minimize, or close app windows seamlessly, just like a real OS.
+  - Drag or close app windows seamlessly, just like a real OS.
 
 ## Usage Instructions
 
@@ -43,18 +43,16 @@ A fully interactive, browser-based clone of the Windows operating system with fu
    - Open the Start Menu by clicking the Windows logo in the taskbar.
    - Click on the app icons to launch:
      - **Clock:** Displays time and date.
-     - **Calculator:** Perform arithmetic operations.
-     - **MS Paint:** Draw with a virtual canvas.
+     - **Calculator:** Perform basic arithmetic operations.
+     - **MS Paint:** Draw on a canvas.
+     - **Easter Egg:** There is an easter egg related to the developer hidden inside the start menu.
 
 6. **Manage Windows:**
-   - Drag windows by their title bar to reposition them.
+   - Drag windows by their title bar to move and reposition them.
    - Use the close (`×`) button to close app windows.
 
 7. **Shutting it Down:**
    - Click the shutdown button on the start menu or the lock screen to shut down the system.
-
-8. **Screensaver:**
-   - Wait for a period of inactivity to see the animated "Windows 12" screensaver.
 
 ## Additional Notes
 
