@@ -49,14 +49,19 @@ body {
     align-items:center;
     position:absolute;
     translateY(-10000px);
-    visibility:0;
-    transition: transform 0.4s ease-in-out, filter 0.3s ease-in-out, scale 0.4s ease-in-out;
+    opacity:0;
+    transition: transform 0.4s ease-in-out, filter 0.3s ease-in-out, scale 0.4s ease-in-out, opacity 0.15s ease-in-out;
     background-color:rgba(0,0,0,0.5);
     width:100%;
     height:100%;
     align-items:center;
     filter:blur(0px);
     scale:1;
+}
+
+.passflex.sldo {
+   opacity:1;
+   transition: transform 0.4s ease-in-out, filter 0.3s ease-in-out, scale 0.4s ease-in-out, opacity 0.65s ease-in-out;
 }
 
 .inputflex {
@@ -1635,6 +1640,7 @@ justify-content:center;
 <!--User Start Screen-->
 <div id="user-start_screen" class="screen">
     <div id="spc" style="user-select: none;" class="startPc"></div>
+    <p style="font-size: 1rem; position:absolute; bottom: 30px; color: white;"> This project looks best in fullscreen, so please press the F11 key to make this window fullscreen. </p>
 </div>
 
         <!-- Lockscreen -->
@@ -2098,7 +2104,12 @@ document.addEventListener("DOMContentLoaded", () => {
       isOnLS = false
       fadeToScreen(lockScreen, desktopScreen)
       updateTaskbarTime()
-    } else {
+    }
+    else if(enteredPin === '')
+        {
+            alert("Enter a pin first !");
+        }
+    else {
       alert("Incorrect Pin. Try entering: " + correctPin)
       passwordInput.value = "";
     }
@@ -2151,7 +2162,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function handleSwipeDown() {
     passLock.style.transform = "translateY(-1000px)"
-    passLock.style.visibility = "visibility:0"
+    passLock.classList.remove("sldo")
     iniLock.style.transform = "translateY(0)"
     iniLock.style.scale = "1"
     iniLock.style.filter = "blur(0px)"
@@ -2168,8 +2179,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function handleSwipeUp() {
    if(isOnLS === true)
    {
+    passLock.classList.add("sldo")
     passLock.style.transform = "translateY(-0px)"
-    passLock.style.visibility = "1"
     iniLock.style.transform = "translateY(-300px)"
     iniLock.style.scale = "4"
     iniLock.style.filter = "blur(5px)"
@@ -2178,7 +2189,7 @@ document.addEventListener("DOMContentLoaded", () => {
     textUp.style.filter = "blur(5px)"
     background.style.filter = "blur(7px)"
     passLock.style.filter = "blur(0px)"
-    background.style.scale = "1.15"
+    background.style.scale = "1.25"
     passLock.style.scale = "1"
     setTimeout(()=> {passwordInput.focus(); }, 100);
    }
@@ -2515,7 +2526,7 @@ windowElement.addEventListener("mousedown", bringToFront);
 
   function resetScreensaverTimer() {
     clearTimeout(screensaverTimeout)
-    screensaverTimeout = setTimeout(showScreensaver, 20000)
+    screensaverTimeout = setTimeout(showScreensaver, 15000)
   }
 
   screensaver.addEventListener("click", () => {
@@ -2970,7 +2981,6 @@ windowElement.addEventListener("mousedown", bringToFront);
   }
 
   updateColor()
-    
   colorPicker.addEventListener("input", updateColor)
   eraserColorPicker.addEventListener("input", updateColor)
 
@@ -2981,13 +2991,11 @@ windowElement.addEventListener("mousedown", bringToFront);
   eeAppButton.addEventListener("click", () => {
     if (counter <= 3) {
       counter++
-    }
-    else {
+    } else {
       openWindow(eeWindow)
       counter = 0
       navigator.vibrate(7)
     }
-      
     clickSound.volume = 0.1
     navigator.vibrate(7)
     clickSound.play()
