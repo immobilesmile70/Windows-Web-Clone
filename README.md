@@ -58,5 +58,6 @@ A fully interactive, browser-based clone of the Windows operating system with fu
 
 - **Password Hint:** If you forget the password, the hint is "First Four Natural Numbers."
 - **Responsive Design:** Works best on large landscape displays with mouse & keyboard and chromium-based browsers.
+- **Optimal Experience:** This project looks best in fullscreen, so please open this project up in fullscreene.
 
 Enjoy!
