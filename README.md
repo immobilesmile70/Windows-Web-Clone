@@ -20,7 +20,7 @@ A fully interactive, browser-based clone of the Windows operating system with fu
   - A rotating "Windows 12" screensaver appears when idle.
 
 - **Blue Screen Of Death (BSOD):**
-- It features a convincing Blue Screen Of Death.
+  - It features a convincing Blue Screen Of Death.
 
 - **Sound Effects:**
   - Startup, shutdown, button clicks, and app interactions have sounds for an immersive experience.
