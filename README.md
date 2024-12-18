@@ -17,7 +17,10 @@ A fully interactive, browser-based clone of the Windows operating system with fu
   - A responsive taskbar that includes a Windows logo and a clock.
 
 - **Screensaver:**
-  - A rotating "Windows" screensaver appears when idle.
+  - A rotating "Windows 12" screensaver appears when idle.
+
+- **Blue Screen Of Death (BSOD):**
+- It features a convincing Blue Screen Of Death.
 
 - **Sound Effects:**
   - Startup, shutdown, button clicks, and app interactions have sounds for an immersive experience.
@@ -53,6 +56,9 @@ A fully interactive, browser-based clone of the Windows operating system with fu
 
 7. **Shutting it Down:**
    - Click the shutdown button on the start menu or the lock screen to shut down the system.
+
+8. **Triggering BSOD:**
+   - If your calculator result is 69 or if you click the administrator chip, it will trigger a BSOD.
 
 ## Additional Notes
 
